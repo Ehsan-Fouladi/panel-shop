@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-family);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-raised: var(--card-raised);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-control: var(--control);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+  --color-info: var(--info);
+  --color-sidebar-background: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --shadow-card: var(--shadow-card-value);
+  --shadow-popover: var(--shadow-popover-value);
+  --shadow-dialog: var(--shadow-dialog-value);
+}
+
+:root,
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --font-family:
+    "IRANSans", "Vazirmatn Variable", Vazirmatn, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --app-canvas: #191919;
+  --frame-border: #474747;
+  --shell-background: #080809;
+  --background: #191919;
+  --foreground: #f4f4f5;
+  --card: #101012;
+  --card-foreground: #f4f4f5;
+  --card-raised: #19191c;
+  --popover: #171719;
+  --popover-foreground: #f4f4f5;
+  --primary: #78a7f8;
+  --primary-hover: #8bb4fb;
+  --primary-foreground: #071426;
+  --secondary: #1a1a1d;
+  --secondary-foreground: #ededee;
+  --muted: #1b1b1e;
+  --muted-foreground: #9a9a9f;
+  --accent: #242428;
+  --accent-foreground: #f4f4f5;
+  --border: #303034;
+  --border-strong: #414146;
+  --input: #343438;
+  --control: #18181b;
+  --ring: #78a7f8;
+  --success: #43c990;
+  --warning: #f4b74b;
+  --destructive: #f06464;
+  --info: #78a7f8;
+  --sidebar-background: #101012;
+  --sidebar-foreground: #a2a2a7;
+  --chart-1: #f2c532;
+  --chart-2: #43c990;
+  --chart-3: #78a7f8;
+  --chart-4: #a883f2;
+  --chart-5: #f28b45;
+  --chart-6: #e57778;
+  --chart-7: #6dcdd1;
+  --sales-bar-surface: #171719;
+  --sales-bar-texture: #29292d;
+  --calendar-selected-text: #091629;
+  --shadow-card-value: 0 14px 34px rgb(0 0 0 / 17%);
+  --shadow-popover-value: 0 18px 48px rgb(0 0 0 / 38%);
+  --shadow-dialog-value: 0 24px 80px rgb(0 0 0 / 45%);
+  --doran-bg: var(--background);
+  --doran-surface: var(--card);
+  --doran-surface-muted: var(--card-raised);
+  --doran-surface-raised: var(--card-raised);
+  --doran-border: var(--border);
+  --doran-border-strong: var(--border-strong);
+  --doran-text: var(--foreground);
+  --doran-text-muted: var(--muted-foreground);
+  --doran-text-subtle: var(--muted-foreground);
+  --doran-primary: var(--primary);
+  --doran-primary-hover: var(--primary-hover);
+  --doran-primary-soft: rgb(120 167 248 / 14%);
+  --doran-primary-contrast: var(--calendar-selected-text);
+  --doran-accent: var(--chart-3);
+  --doran-accent-soft: rgb(120 167 248 / 12%);
+  --doran-success: var(--success);
+  --doran-warning: var(--warning);
+  --doran-danger: var(--destructive);
+  --doran-holiday: var(--destructive);
+  --doran-focus-ring: rgb(120 167 248 / 42%);
+  --doran-calendar-bg: var(--card);
+  --doran-calendar-border-color: var(--border);
+  --doran-calendar-heading-color: var(--foreground);
+  --doran-calendar-weekday-color: var(--muted-foreground);
+  --doran-day-color: var(--foreground);
+  --doran-day-hover-bg: var(--accent);
+  --doran-day-selected-bg: var(--primary);
+  --doran-day-selected-color: var(--calendar-selected-text);
+  --doran-day-selected-hover-bg: var(--primary-hover);
+  --doran-day-outside-color: #68686d;
+  --doran-input-bg: var(--control);
+  --doran-input-border-color: var(--border);
+  --doran-input-focus-border-color: var(--primary);
+  --doran-placeholder-color: var(--muted-foreground);
+  --doran-font-sans: var(--font-family);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --app-canvas: #e8e9eb;
+  --frame-border: #c5c6c9;
+  --shell-background: #f6f6f7;
+  --background: #f1f2f4;
+  --foreground: #202124;
+  --card: #ffffff;
+  --card-foreground: #202124;
+  --card-raised: #f7f8fa;
+  --popover: #ffffff;
+  --popover-foreground: #202124;
+  --primary: #3978dc;
+  --primary-hover: #2868cd;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f1f3;
+  --secondary-foreground: #34363b;
+  --muted: #f1f2f4;
+  --muted-foreground: #70727a;
+  --accent: #e8edf6;
+  --accent-foreground: #202124;
+  --border: #d9dade;
+  --border-strong: #c6c8ce;
+  --input: #d9dade;
+  --control: #f8f9fa;
+  --ring: #3978dc;
+  --success: #17845c;
+  --warning: #9b6506;
+  --destructive: #c94149;
+  --info: #3978dc;
+  --sidebar-background: #f7f7f8;
+  --sidebar-foreground: #656872;
+  --chart-1: #c49108;
+  --chart-2: #218b63;
+  --chart-3: #3978dc;
+  --chart-4: #8057c7;
+  --chart-5: #dc6e28;
+  --chart-6: #cb4e57;
+  --chart-7: #208b91;
+  --sales-bar-surface: #f1f2f4;
+  --sales-bar-texture: #d8dade;
+  --calendar-selected-text: #ffffff;
+  --shadow-card-value: 0 12px 28px rgb(30 35 45 / 5%);
+  --shadow-popover-value: 0 18px 44px rgb(20 25 35 / 14%);
+  --shadow-dialog-value: 0 24px 70px rgb(20 25 35 / 20%);
+  --doran-bg: var(--background);
+  --doran-surface: var(--card);
+  --doran-surface-muted: var(--card-raised);
+  --doran-surface-raised: var(--card-raised);
+  --doran-border: var(--border);
+  --doran-border-strong: var(--border-strong);
+  --doran-text: var(--foreground);
+  --doran-text-muted: var(--muted-foreground);
+  --doran-text-subtle: var(--muted-foreground);
+  --doran-primary: var(--primary);
+  --doran-primary-hover: var(--primary-hover);
+  --doran-primary-soft: rgb(57 120 220 / 12%);
+  --doran-primary-contrast: var(--calendar-selected-text);
+  --doran-accent: var(--chart-3);
+  --doran-accent-soft: rgb(57 120 220 / 11%);
+  --doran-success: var(--success);
+  --doran-warning: var(--warning);
+  --doran-danger: var(--destructive);
+  --doran-holiday: var(--destructive);
+  --doran-focus-ring: rgb(57 120 220 / 35%);
+  --doran-calendar-bg: var(--card);
+  --doran-calendar-border-color: var(--border);
+  --doran-calendar-heading-color: var(--foreground);
+  --doran-calendar-weekday-color: var(--muted-foreground);
+  --doran-day-color: var(--foreground);
+  --doran-day-hover-bg: var(--accent);
+  --doran-day-selected-bg: var(--primary);
+  --doran-day-selected-color: var(--calendar-selected-text);
+  --doran-day-selected-hover-bg: var(--primary-hover);
+  --doran-day-outside-color: #a1a3a9;
+  --doran-input-bg: var(--control);
+  --doran-input-border-color: var(--border);
+  --doran-input-focus-border-color: var(--primary);
+  --doran-placeholder-color: var(--muted-foreground);
+  --doran-font-sans: var(--font-family);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+
+  html {
+    min-width: 320px;
+    min-height: 100%;
+    background: var(--app-canvas);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* min-width: 320px;
+    min-height: 100svh;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--app-canvas); */
+    color: var(--foreground);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-feature-settings: "ss01";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button {
+    color: inherit;
+  }
+
+  ::selection {
+    background: rgb(120 167 248 / 28%);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  #root {
+    position: relative;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+}
+
+/* Keep the dashboard surface natively scrollable without a visible track. */
+@utility scrollbar-indicator-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Doran portals its panel to body; align it within the dashboard frame's inset. */
+@media (min-width: 721px) and (max-width: 1100px) {
+  .doran-datepicker__popover:not(.doran-datepicker__popover--sheet) {
+    translate: 12px 0;
+  }
+}
+
+@media (min-width: 1101px) and (max-width: 1250px) {
+  .doran-datepicker__popover:not(.doran-datepicker__popover--sheet) {
+    translate: 4vw 0;
+  }
+}
+
+@media (min-width: 1251px) {
+  .doran-datepicker__popover:not(.doran-datepicker__popover--sheet) {
+    translate: max(38px, calc(360px - 25.1vw)) 0;
+  }
+}
+
+/* Modal-contained Doran panels use viewport coordinates, not the dashboard inset compensation. */
+[role="dialog"]
+  .doran-datepicker__popover:not(.doran-datepicker__popover--sheet) {
+  translate: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: Keep reduced-motion preference stronger than component transitions. */
+    transition-duration: 0.01ms !important;
+  }
+}
