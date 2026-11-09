@@ -234,7 +234,7 @@ export function CashRegisterPage() {
           title="تطبیق صندوق"
           description="فروش با درآمد یکی نیست؛ فقط وجوه نقد ثبت‌شده در این محاسبه لحاظ می‌شود."
         >
-          <div className="cash-reconciliation grid gap-3 rounded-2xl border border-border bg-card-raised/50 p-4 sm:grid-cols-2">
+          <div className="cash-reconciliation grid gap-3 rounded-2xl border border-border bg-card-raised/50 p-4 sm:grid-cols-3">
             <div>
               <span>موجودی آغازین</span>
               <strong>
@@ -253,12 +253,12 @@ export function CashRegisterPage() {
                 − {formatCurrency(totals.outflows)}
               </strong>
             </div>
-            <div className="cash-reconciliation-total flex items-center justify-between gap-3 border-t border-border pt-3 font-semibold tabular-nums sm:col-span-2">
+            <div className="cash-reconciliation-total flex items-center justify-between gap-3 border-t border-border pt-3 font-semibold tabular-nums sm:col-span-3">
               <span>ماندهٔ موردانتظار</span>
               <strong>{formatCurrency(currentSession ? expected : 0)}</strong>
             </div>
             {!currentSession && (
-              <p>برای مشاهدهٔ تطبیق زنده، یک نوبت جدید باز کنید.</p>
+              <p className="sm:col-span-3">برای مشاهدهٔ تطبیق زنده، یک نوبت جدید باز کنید.</p>
             )}
           </div>
         </SectionCard>
