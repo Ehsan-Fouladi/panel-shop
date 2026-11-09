@@ -5,6 +5,7 @@ import {
   ClipboardList,
   CreditCard,
   type LucideIcon,
+  Menu,
   Moon,
   PackageOpen,
   ReceiptText,
@@ -232,7 +233,7 @@ export function AppHeader({
             variant="icon"
             size="icon-sm"
           >
-            <ClipboardList aria-hidden="true" size={19} />
+            <Menu aria-hidden="true" size={19} />
           </Button>
         </SheetTrigger>
         <div className="header-title-block min-w-0 space-y-0.5">
@@ -244,13 +245,13 @@ export function AppHeader({
           </p>
         </div>
       </div>
-      <div className="search-root min-w-0">
+      <div className="search-root flex min-w-0 flex-1 justify-center max-w-2xl max-lg:hidden">
         <Button
           aria-controls="dashboard-search-dialog"
           aria-expanded={searchOpen}
           aria-haspopup="dialog"
           aria-label="جست‌وجوی کالا، مشتری یا تراکنش"
-          className="search-control min-w-0 search-trigger w-2xl gap-2 rounded-full border border-border bg-control px-4 text-muted-foreground hover:text-foreground max-lg:h-10 max-lg:w-10 max-lg:px-0"
+          className="search-control min-w-0 search-trigger w-full gap-2 rounded-full border border-border bg-control px-4 text-muted-foreground hover:text-foreground"
           onClick={() => setSearchOpen(true)}
           variant="ghost"
           size="default"
@@ -258,7 +259,7 @@ export function AppHeader({
           <Search
             aria-hidden="true"
             className="search-control-icon shrink-0"
-            size={16}
+            size={17}
           />
           <span className="search-trigger-label min-w-0 flex-1 truncate text-start max-lg:hidden">
             {searchQuery || "جست‌وجو در داده‌ها"}
@@ -266,6 +267,18 @@ export function AppHeader({
         </Button>
       </div>
       <div className="header-tools flex shrink-0 items-center gap-2 sm:gap-3">
+        <Button
+          aria-controls="dashboard-search-dialog"
+          aria-expanded={searchOpen}
+          aria-haspopup="dialog"
+          aria-label="جست‌وجوی کالا، مشتری یا تراکنش"
+          className="header-icon-button rounded-full lg:hidden"
+          onClick={() => setSearchOpen(true)}
+          variant="icon"
+          size="icon"
+        >
+          <Search aria-hidden="true" size={17} />
+        </Button>
         <CommandDialog
           description="در داده‌های محلی فروشگاه جست‌وجو کنید و برای بازکردن رکورد نتیجه را انتخاب کنید."
           onCloseAutoFocus={(event) => {
