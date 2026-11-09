@@ -1304,6 +1304,7 @@ export function ProductDetailPage() {
       )}
       <div className="workspace-two-column grid min-w-0 grid-cols-1 gap-4 xl:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.9fr)]">
         <SectionCard
+          className="grid-rows-[auto_1fr]"
           title="گردش موجودی"
           description="سوابق موجودی افزوده، فروخته یا اصلاح‌شده؛ تاریخچه با عملیات جدید تکمیل می‌شود."
         >

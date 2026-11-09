@@ -318,13 +318,28 @@ export function SettingsPage() {
                 id="settings-receipt-footer"
               />
             </Field>
-            <label className="toggle-row flex min-w-0 items-center justify-between gap-3 rounded-xl border border-border bg-card-raised/60 p-3 text-sm">
-              <span>
-                <strong>نمایش SKU یا کد داخلی کالا در رسید</strong>
-                <small> در پیش‌نمایش رسید و چاپ مرورگر مصرف می‌شود.</small>
-              </span>
-              <input {...register("showSkuOnReceipt")} type="checkbox" />
-            </label>
+            <div className="flex min-w-0 items-end">
+              <label
+                className="toggle-row flex h-10 w-full cursor-pointer items-center justify-between gap-3 rounded-xl border border-input bg-control px-3 text-sm text-foreground transition-colors focus-within:border-ring focus-within:ring-2 focus-within:ring-ring/25"
+                htmlFor="settings-show-sku"
+              >
+                <span className="min-w-0 truncate">
+                  <strong className="font-medium">
+                    نمایش SKU یا کد داخلی کالا در رسید
+                  </strong>
+                  <small className="text-muted-foreground">
+                    {" "}
+                    · در پیش‌نمایش رسید و چاپ مرورگر مصرف می‌شود.
+                  </small>
+                </span>
+                <input
+                  {...register("showSkuOnReceipt")}
+                  className="shrink-0"
+                  id="settings-show-sku"
+                  type="checkbox"
+                />
+              </label>
+            </div>
             <Controller
               control={control}
               name="calendarMode"

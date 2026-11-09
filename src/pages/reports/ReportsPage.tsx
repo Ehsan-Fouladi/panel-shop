@@ -265,7 +265,7 @@ export function ReportsPage() {
             required
             value={end}
           />
-          <div className="flex min-w-0 w-full items-center">
+          <div className="flex min-w-0 w-full items-end">
             <FilterInput
               id="report-search"
               label="فیلتر سطرهای گزارش"

@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select";
 import type { TransactionStatus } from "@/data/dashboard-data";
 import type { CalendarMode, DateKey } from "@/lib/date";
-import { dateKeyFromDoran, getDateLabel, toDoranDate } from "@/lib/date";
+import { dateKeyFromDoran, toDoranDate } from "@/lib/date";
 import {
   formatCompactCurrency,
   formatCurrency,
@@ -194,33 +194,35 @@ export function Field({
     <div
       className={`form-field flex min-w-0 flex-col gap-1.5 ${className}`.trim()}
     >
-      <label
-        className="form-field-label text-xs font-medium text-muted-foreground"
-        htmlFor={htmlFor}
-        id={labelId}
-      >
-        {label}
-        {required && (
-          <>
-            <span
-              aria-hidden="true"
-              className="form-required ms-1 text-destructive"
-            >
-              *
-            </span>
-            <span className="sr-only"> الزامی</span>
-          </>
-        )}
-      </label>
-      {control}
-      {hint && !error && (
-        <span
-          className="form-field-hint text-[11px] leading-5 text-muted-foreground"
-          id={hintId}
+      <div className="form-field-top flex min-h-5 min-w-0 flex-wrap items-baseline justify-between gap-x-2">
+        <label
+          className="form-field-label text-xs font-medium text-muted-foreground"
+          htmlFor={htmlFor}
+          id={labelId}
         >
-          {hint}
-        </span>
-      )}
+          {label}
+          {required && (
+            <>
+              <span
+                aria-hidden="true"
+                className="form-required ms-1 text-destructive"
+              >
+                *
+              </span>
+              <span className="sr-only"> الزامی</span>
+            </>
+          )}
+        </label>
+        {hint && !error && (
+          <span
+            className="form-field-hint ms-auto text-end text-[11px] leading-5 text-muted-foreground"
+            id={hintId}
+          >
+            {hint}
+          </span>
+        )}
+      </div>
+      {control}
       {error && (
         <span
           className="form-field-error text-xs leading-5 text-destructive"
@@ -239,7 +241,6 @@ export function DateField({
   label,
   value,
   onChange,
-  mode,
   required = false,
   error,
 }: {
@@ -267,14 +268,11 @@ export function DateField({
       className="date-field"
       label={label}
       labelId={`${id}-label`}
-      hintId={`${id}-date-hint`}
       required={required}
-      hint={datePreview(value, mode)}
       error={error}
     >
       <DoranDatePicker
         aria-labelledby={`${id}-label`}
-        aria-describedby={`${id}-date-hint`}
         className="w-full"
         classNames={{
           root: "w-full min-w-0",
@@ -299,15 +297,6 @@ export function DateField({
       />
     </Field>
   );
-}
-
-export function datePreview(value: DateKey, mode: CalendarMode): string {
-  if (!value) return "تاریخی انتخاب نشده است.";
-  try {
-    return `${getDateLabel(value, mode, true)} · ذخیره‌سازی بر پایهٔ تاریخ میلادی`;
-  } catch {
-    return "تاریخ نامعتبر است.";
-  }
 }
 
 export function PaymentMethodSelect({

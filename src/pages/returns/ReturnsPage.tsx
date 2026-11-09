@@ -521,7 +521,7 @@ function ReturnCreateDialog({
               {errors.root.message}
             </p>
           )}
-          <div className="dialog-actions flex flex-wrap items-center justify-end gap-2 border-t border-border/70 pt-4">
+          <div className="dialog-actions flex flex-wrap items-center justify-start gap-2 border-t border-border/70 pt-4">
             <Button onClick={() => onOpenChange(false)} variant="outline">
               انصراف
             </Button>

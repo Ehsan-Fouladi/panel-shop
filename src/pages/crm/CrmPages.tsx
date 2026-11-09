@@ -544,12 +544,12 @@ function CustomerDetailsDialog({
             ))}
           </div>
         )}
-        <div className="dialog-actions mt-4 flex flex-wrap items-center justify-end gap-2 border-t border-border/70 pt-4">
-          <Button onClick={onEdit} variant="outline">
-            <Pencil aria-hidden="true" size={14} /> ویرایش
-          </Button>
+        <div className="dialog-actions mt-4 flex flex-wrap items-center justify-start gap-2 border-t border-border/70 pt-4">
           <Button onClick={onClose} variant="secondary">
             بستن
+          </Button>
+          <Button onClick={onEdit} variant="outline">
+            <Pencil aria-hidden="true" size={14} /> ویرایش
           </Button>
         </div>
       </DialogContent>
@@ -761,8 +761,9 @@ export function CampaignsPage() {
         <SectionCard
           title="پیش‌نمایش پیام"
           description="نمونهٔ نمایش محلی؛ از برنامه خارج نمی‌شود."
+          className="grid-rows-[auto_1fr]"
         >
-          <div className="sms-preview grid gap-3 rounded-2xl border border-border bg-card-raised/60 p-4">
+          <div className="sms-preview grid grid-rows-[auto_1fr_auto] gap-3 rounded-2xl border border-border bg-card-raised/60 p-4">
             <span className="sms-preview-brand flex items-center gap-2 border-b border-border pb-3 text-sm font-semibold">
               {title.trim() || "نام پویش"}
             </span>

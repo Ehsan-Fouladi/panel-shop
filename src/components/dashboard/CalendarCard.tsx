@@ -74,7 +74,7 @@ export function CalendarCard({
             <legend className="sr-only">نوع تقویم</legend>
             <button
               aria-pressed={mode === "jalali"}
-              className="calendar-mode-button rounded-full px-2.5 py-1 text-[10px] text-muted-foreground transition-colors aria-[pressed=true]:bg-primary aria-[pressed=true]:text-primary-foreground"
+              className="calendar-mode-button rounded-full px-2.5 py-1 text-[10px] text-muted-foreground transition-colors aria-[pressed=true]:bg-foreground aria-[pressed=true]:text-background"
               onClick={() => onModeChange("jalali")}
               type="button"
             >
@@ -82,7 +82,7 @@ export function CalendarCard({
             </button>
             <button
               aria-pressed={mode === "gregorian"}
-              className="calendar-mode-button rounded-full px-2.5 py-1 text-[10px] text-muted-foreground transition-colors aria-[pressed=true]:bg-primary aria-[pressed=true]:text-primary-foreground"
+              className="calendar-mode-button rounded-full px-2.5 py-1 text-[10px] text-muted-foreground transition-colors aria-[pressed=true]:bg-foreground aria-[pressed=true]:text-background"
               onClick={() => onModeChange("gregorian")}
               type="button"
             >
@@ -140,7 +140,7 @@ export function CalendarCard({
                     aria-label={getDateLabel(day.dateKey, mode, true)}
                     aria-pressed={day.isSelected}
                     className={[
-                      "calendar-day mx-auto grid h-8 w-8 place-items-center rounded-full text-[11px] tabular-nums text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&.is-outside]:text-muted-foreground/50 [&.is-selected]:bg-primary [&.is-selected]:font-semibold [&.is-selected]:text-primary-foreground [&.is-today:not(.is-selected)]:ring-1 [&.is-today:not(.is-selected)]:ring-primary",
+                      "calendar-day mx-auto grid h-8 w-8 place-items-center rounded-full text-[11px] tabular-nums text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&.is-outside]:text-muted-foreground/50 [&.is-selected]:bg-foreground [&.is-selected]:font-semibold [&.is-selected]:text-background [&.is-today:not(.is-selected)]:ring-1 [&.is-today:not(.is-selected)]:ring-primary",
                       !day.isCurrentMonth && "is-outside",
                       day.isSelected && "is-selected",
                       day.isToday && "is-today",

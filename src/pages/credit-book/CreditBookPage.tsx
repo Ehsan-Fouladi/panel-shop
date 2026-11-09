@@ -215,7 +215,7 @@ export function CreditBookPage() {
             <Button
               aria-controls="credit-entries-panel"
               aria-selected={tab === item.id}
-              className={`credit-tab ${tab === item.id ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary-hover hover:text-primary-foreground" : "text-muted-foreground hover:bg-card/70 hover:text-foreground"}`}
+              className={`credit-tab ${tab === item.id ? "bg-foreground text-background shadow-sm hover:bg-foreground hover:text-background" : "text-muted-foreground hover:bg-card/70 hover:text-foreground"}`}
               id={`credit-tab-${item.id}`}
               key={item.id}
               onClick={() => selectTab(item.id)}

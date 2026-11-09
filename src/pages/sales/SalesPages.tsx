@@ -533,7 +533,7 @@ export function NewSalePage() {
               onClick={addProductByCode}
               type="button"
               variant="outline"
-              className="w-1/5"
+              className="h-10 w-1/5 self-end"
             >
               افزودن با کد
             </Button>
@@ -715,27 +715,37 @@ export function NewSalePage() {
                       type="text"
                     />
                   </Field>
-                  <div className="sale-line-total flex min-h-10 items-center justify-between gap-2 rounded-xl bg-muted/60 px-3 text-sm font-semibold tabular-nums">
-                    <span>جمع ردیف</span>
-                    <strong>
-                      {formatCurrency(
-                        (Number.isFinite(item.quantity) ? item.quantity : 0) *
-                          (Number.isFinite(item.unitPrice)
-                            ? item.unitPrice
-                            : 0),
+                  <div className="sale-line-total flex min-w-0 flex-col gap-1.5">
+                    <span
+                      className="form-field-label text-xs font-medium text-muted-foreground"
+                      id={`sale-line-total-${index}-label`}
+                    >
+                      جمع ردیف
+                    </span>
+                    <div
+                      aria-labelledby={`sale-line-total-${index}-label`}
+                      className="flex min-h-10 items-center justify-between gap-2 rounded-xl bg-muted/60 px-3 text-sm font-semibold tabular-nums"
+                    >
+                      <strong>
+                        {formatCurrency(
+                          (Number.isFinite(item.quantity) ? item.quantity : 0) *
+                            (Number.isFinite(item.unitPrice)
+                              ? item.unitPrice
+                              : 0),
+                        )}
+                      </strong>
+                      {items.length > 1 && (
+                        <Button
+                          aria-label={`حذف ردیف ${index + 1}`}
+                          onClick={() => remove(index)}
+                          size="icon-sm"
+                          variant="outline"
+                          className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive"
+                        >
+                          <Trash className="size-3" />
+                        </Button>
                       )}
-                    </strong>
-                    {items.length > 1 && (
-                      <Button
-                        aria-label={`حذف ردیف ${index + 1}`}
-                        onClick={() => remove(index)}
-                        size="icon-sm"
-                        variant="outline"
-                        className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive"
-                      >
-                        <Trash className="size-3" />
-                      </Button>
-                    )}
+                    </div>
                   </div>
                 </div>
               );
@@ -1037,6 +1047,7 @@ export function SaleDetailPage() {
       </SectionCard>
       <div className="workspace-two-column grid min-w-0 grid-cols-1 gap-4 xl:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.9fr)]">
         <SectionCard
+          className="grid-rows-[auto_1fr]"
           title="سوابق پرداخت"
           description="پرداخت‌ها درآمد جدید ایجاد نمی‌کنند؛ هر ردیف به همین فاکتور متصل است."
           action={
@@ -1293,7 +1304,7 @@ function SalePaymentDialog({
               {errors.root.message}
             </p>
           )}
-          <div className="dialog-actions flex flex-wrap items-center justify-end gap-2 border-t border-border/70 pt-4">
+          <div className="dialog-actions flex flex-wrap items-center justify-start gap-2 border-t border-border/70 pt-4">
             <Button onClick={() => onOpenChange(false)} variant="outline">
               انصراف
             </Button>
@@ -1401,7 +1412,7 @@ function SaleVoidDialog({
               {errors.root.message}
             </p>
           )}
-          <div className="dialog-actions flex flex-wrap items-center justify-end gap-2 border-t border-border/70 pt-4">
+          <div className="dialog-actions flex flex-wrap items-center justify-start gap-2 border-t border-border/70 pt-4">
             <Button onClick={() => onOpenChange(false)} variant="outline">
               انصراف
             </Button>

@@ -15,7 +15,7 @@ export function FilterInput({
   placeholder?: string;
 }) {
   return (
-    <div className="filter-input-wrap flex min-w-[min(100%,13rem)] flex-1 items-center gap-2 rounded-xl border border-input bg-control px-3 transition-colors focus-within:border-ring focus-within:ring-2 focus-within:ring-ring/25 [&>svg]:shrink-0 [&>svg]:text-muted-foreground">
+    <div className="filter-input-wrap flex h-10 min-w-[min(100%,13rem)] flex-1 items-center gap-2 rounded-xl border border-input bg-control px-3 transition-colors focus-within:border-ring focus-within:ring-2 focus-within:ring-ring/25 [&>svg]:shrink-0 [&>svg]:text-muted-foreground">
       <label className="sr-only" htmlFor={id}>
         {label}
       </label>

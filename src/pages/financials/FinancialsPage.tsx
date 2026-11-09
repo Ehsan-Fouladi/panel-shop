@@ -484,8 +484,9 @@ export function FinancialsPage() {
         <SectionCard
           title="مانده‌های ترازنامه‌ای"
           description="مبالغ باز همهٔ دوره‌ها؛ نه فقط ماه جاری."
+          className="grid-rows-[auto_1fr]"
         >
-          <div className="pnl-list grid gap-2">
+          <div className="pnl-list grid content-evenly gap-2">
             <div>
               <span>مطالبات مشتریان</span>
               <strong>{formatCurrency(yearSummary.receivables)}</strong>

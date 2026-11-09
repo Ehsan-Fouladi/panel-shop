@@ -223,7 +223,7 @@ export function SalesOverviewCard({
             {periods.map((item) => (
               <button
                 aria-pressed={period === item.id}
-                className="period-button rounded-full px-3 py-1.5 text-[11px] text-muted-foreground transition-colors hover:text-foreground aria-[pressed=true]:bg-primary aria-[pressed=true]:font-semibold aria-[pressed=true]:text-primary-foreground"
+                className="period-button rounded-full px-3 py-1.5 text-[11px] text-muted-foreground transition-colors hover:text-foreground aria-[pressed=true]:bg-foreground aria-[pressed=true]:font-semibold aria-[pressed=true]:text-background"
                 key={item.id}
                 onClick={() => onPeriodChange(item.id)}
                 type="button"
